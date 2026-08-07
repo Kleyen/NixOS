@@ -33,7 +33,6 @@
     onlyoffice-desktopeditors
     vlc
     vscode-fhs
-
     #
     python3
     gdu

@@ -28,7 +28,7 @@
     borderpx = 1;
     gappih = 5; # horizontal inner gap (between windows)
     gappiv = 5; # vertical inner gap
-    gappoh = 5; # horizontal outer gap (window to screen edge)
+    gappoh = 4; # horizontal outer gap (window to screen edge)
     gappov = 5; # vertical outer gap
     focuscolor = "0xc9b890ff";
   };

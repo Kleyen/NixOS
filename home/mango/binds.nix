@@ -33,6 +33,7 @@ in
       "SUPER,Q,killclient"
       "SUPER,R,reload_config"
       "SUPER+SHIFT,E,quit"
+      "SHIFT,n,switch_layout"
 
       # --- window state ---
       "SUPER,F,togglefullscreen"
@@ -50,9 +51,9 @@ in
       "SUPER+SHIFT,Up,exchange_client,up"
       "SUPER+SHIFT,Down,exchange_client,down"
 
-      # --- screenshot ---
-      "NONE,Print,spawn,dms ipc call screenshot toggle"
-      "SUPER,Print,spawn,dms ipc call screenshot region"
+      # --- screenshot (not IPC — dms's own CLI subcommand) ---
+      "NONE,Print,spawn,dms screenshot"
+      "SUPER,Print,spawn,dms screenshot window"
 
       # --- media keys ---
       "NONE,XF86MonBrightnessUp,spawn,brightnessctl s +5%"
@@ -74,7 +75,6 @@ in
       "SUPER+SHIFT,D,spawn,dms ipc call dash toggle"                # dashboard
       "SUPER+SHIFT,Escape,spawn,dms ipc call processlist toggle"    # task manager
       "SUPER+SHIFT,N,spawn,dms ipc call night toggle"               # night mode
-      "SUPER,W,spawn,dms ipc call overview toggle"                  # workspace overview
     ] ++ tagBinds ++ numpadBinds;
   };
-}
+} 

@@ -10,7 +10,6 @@
     ./home/qutebrowser.nix
     ./home/theming.nix
     ./home/mango
-    ./home/dms.nix
     ./home/zed.nix
   ];
 

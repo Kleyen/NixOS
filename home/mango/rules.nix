@@ -1,10 +1,6 @@
 { ... }:
 {
   wayland.windowManager.mango.settings = {
-    tagrule = [
-      "id:1,layout_name:tile"
-      "id:2,layout_name:scroller"
-    ];
 
     windowrule = [
       "isfloating:1,appid:pavucontrol"
