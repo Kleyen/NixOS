@@ -9,13 +9,10 @@
     fastfetch
     micro
     kew
-    zed-editor
     gthumb
     celluloid
     parabolic
     telegram-desktop
-    nixd
-    alejandra
     cmatrix
     btop
     flatpak
@@ -35,8 +32,9 @@
     libreoffice
     onlyoffice-desktopeditors
     vlc
+    vscode-fhs
 
-    # 
+    #
     python3
     gdu
   ];

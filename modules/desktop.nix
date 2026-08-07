@@ -1,4 +1,4 @@
-{ inputs, pkgs, ...}: {
+{ inputs, ... }: {
   imports = [
     inputs.mangowm.nixosModules.mango
     #inputs.noctalia.nixosModules.default

@@ -9,7 +9,9 @@
     ./home/programs.nix
     ./home/qutebrowser.nix
     ./home/theming.nix
-    ./home/mango.nix
+    ./home/mango
+    ./home/dms.nix
+    ./home/zed.nix
   ];
 
   home.username = "denver";

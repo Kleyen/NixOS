@@ -15,11 +15,17 @@
     };
 
     dms = {
-    	url = "github:AvengeMedia/DankMaterialShell";
-    	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -29,6 +35,7 @@
     nixpkgs,
     home-manager,
     dms,
+    zen-browser,
     ...
   } @ inputs: {
     nixosConfigurations = {
