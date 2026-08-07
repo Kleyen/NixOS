@@ -33,7 +33,7 @@ in
       "SUPER,Q,killclient"
       "SUPER,R,reload_config"
       "SUPER+SHIFT,E,quit"
-      "SHIFT,n,switch_layout"
+      "SUPER+SHIFT,n,switch_layout"
 
       # --- window state ---
       "SUPER,F,togglefullscreen"
