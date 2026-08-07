@@ -7,6 +7,7 @@
     ./binds.nix
     ./rules.nix
     ./autostart.nix
+    ./dms.nix
   ];
 
   wayland.windowManager.mango.enable = true;

@@ -33,7 +33,7 @@ in
       "SUPER,Q,killclient"
       "SUPER,R,reload_config"
       "SUPER+SHIFT,E,quit"
-      "SUPER+SHIFT,n,switch_layout"
+      "CTRL+ALT,n,switch_layout"
 
       # --- window state ---
       "SUPER,F,togglefullscreen"
@@ -77,4 +77,4 @@ in
       "SUPER+SHIFT,N,spawn,dms ipc call night toggle"               # night mode
     ] ++ tagBinds ++ numpadBinds;
   };
-} 
+}
