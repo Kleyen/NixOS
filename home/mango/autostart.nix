@@ -1,6 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 {
   wayland.windowManager.mango.autostart_sh = ''
-    dms run &
+    noctalia &
+    ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
   '';
 }
