@@ -15,6 +15,7 @@
     ./modules/shell.nix
     ./modules/sddm-theme.nix
     ./modules/zen-browser.nix
+    ./modules/adb.nix
   ];
 
   services.gvfs.enable = true;

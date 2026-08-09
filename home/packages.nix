@@ -33,6 +33,9 @@
     onlyoffice-desktopeditors
     vlc
     vscode-fhs
+    celluloid
+    bitwarden-desktop
+    vesktop
     #
     python3
     gdu
