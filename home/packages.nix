@@ -36,6 +36,8 @@
     celluloid
     bitwarden-desktop
     vesktop
+    steam
+
     #
     python3
     gdu
