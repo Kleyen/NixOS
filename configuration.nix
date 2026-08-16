@@ -16,6 +16,7 @@
     ./modules/sddm-theme.nix
     ./modules/zen-browser.nix
     ./modules/adb.nix
+    ./modules/pc-stats.nix
   ];
 
   services.gvfs.enable = true;

@@ -8,8 +8,6 @@
       font-family = "FiraCode Nerd Font";
       font-size = 12;
       cursor-style = "block";
-      window-width = 145;
-      window-height = 38;
     };
   };
 }

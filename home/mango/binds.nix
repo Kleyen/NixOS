@@ -29,7 +29,7 @@ in
   wayland.windowManager.mango.settings = {
     bind = [
       # --- session ---
-      "SUPER,Return,spawn,foot"
+      "SUPER,Return,spawn,ghostty"
       "SUPER,Q,killclient"
       "SUPER,R,reload_config"
       "SUPER+SHIFT,E,quit"

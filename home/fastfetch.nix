@@ -3,10 +3,9 @@
     enable = true;
     settings = {
       logo = {
-        type = "auto";
-        padding = {
-          top = 2;
-        };
+        type = "kitty-direct";
+        source = "~/Pictures/logos/anime.png";
+        padding.top = 1;
       };
       display = {
         separator = " ";
@@ -56,7 +55,7 @@
         {type = "break";}
         {
           type = "wm";
-          key = " wm";
+          key = "󱂬 wm";
           keyColor = "34";
         }
         {type = "break";}

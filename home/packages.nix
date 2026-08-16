@@ -6,7 +6,6 @@
     brave
     obsidian
     bibata-cursors
-    fastfetch
     micro
     kew
     gthumb
