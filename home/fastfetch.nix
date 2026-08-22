@@ -3,9 +3,10 @@
     enable = true;
     settings = {
       logo = {
-        type = "kitty-direct";
-        source = "~/Pictures/logos/anime.png";
-        padding.top = 1;
+        source = "PacBSD";
+        padding = {
+          top = 1;
+        };
       };
       display = {
         separator = " ";
@@ -17,7 +18,11 @@
           type = "title";
           keyWidth = "8";
         }
-        {type = "break";}
+        {type = "break";logo = {
+                type = "kitty-direct";
+                source = "~/Pictures/logos/anime.png";
+                padding.top = 1;
+              };}
         {
           type = "custom";
           format = "{#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37} ";
