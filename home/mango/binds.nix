@@ -51,31 +51,31 @@ in
       "SUPER+SHIFT,Up,exchange_client,up"
       "SUPER+SHIFT,Down,exchange_client,down"
 
-      # --- screenshot (Noctalia's own capture, not a compositor tool) ---
-      "NONE,Print,spawn,noctalia msg screenshot-region"
-      "SUPER,Print,spawn,noctalia msg screenshot-fullscreen"
+      # --- screenshot (dms screenshot CLI, not IPC — supports Mango natively) ---
+      "NONE,Print,spawn,dms screenshot"
+      "SUPER,Print,spawn,dms screenshot full"
 
       # --- media keys ---
-      "NONE,XF86MonBrightnessUp,spawn,noctalia msg brightness-up"
-      "NONE,XF86MonBrightnessDown,spawn,noctalia msg brightness-down"
-      "NONE,XF86AudioRaiseVolume,spawn,noctalia msg volume-up"
-      "NONE,XF86AudioLowerVolume,spawn,noctalia msg volume-down"
-      "NONE,XF86AudioMute,spawn,noctalia msg volume-mute"
-      "NONE,XF86AudioPlay,spawn,noctalia msg media toggle"
-      "NONE,XF86AudioNext,spawn,noctalia msg media next"
-      "NONE,XF86AudioPrev,spawn,noctalia msg media previous"
+      "NONE,XF86MonBrightnessUp,spawn,dms ipc call brightness increment 5"
+      "NONE,XF86MonBrightnessDown,spawn,dms ipc call brightness decrement 5"
+      "NONE,XF86AudioRaiseVolume,spawn,dms ipc call audio increment 5"
+      "NONE,XF86AudioLowerVolume,spawn,dms ipc call audio decrement 5"
+      "NONE,XF86AudioMute,spawn,dms ipc call audio mute"
+      "NONE,XF86AudioPlay,spawn,dms ipc call mpris playPause"
+      "NONE,XF86AudioNext,spawn,dms ipc call mpris next"
+      "NONE,XF86AudioPrev,spawn,dms ipc call mpris previous"
 
-      # --- Noctalia IPC ---
-      "SUPER,Space,spawn,noctalia msg panel-toggle launcher"        # app launcher (was spotlight)
-      "SUPER,Escape,spawn,noctalia msg panel-toggle session"        # logout/reboot/shutdown menu (was powermenu)
-      "SUPER,I,spawn,noctalia msg settings-toggle"                  # settings
-      "SUPER,S,spawn,noctalia msg panel-toggle control-center"      # control center (was Shift+D "dash" — closest equivalent)
-      "SUPER,V,spawn,noctalia msg panel-toggle clipboard"           # clipboard history
-      "SUPER,W,spawn,noctalia msg panel-toggle wallpaper"           # wallpaper picker (new — native to Noctalia)
-      "SUPER,N,spawn,noctalia msg notification-dnd-toggle"          # DND toggle — mutes toasts, not a history panel like DMS had
-      "SUPER+SHIFT,N,spawn,noctalia msg nightlight-toggle"          # night mode (exact match)
-      "SUPER+SHIFT,Escape,spawn,noctalia msg window-switcher"       # alt-tab style overview (was processlist — Noctalia has no task manager panel)
-      "SUPER,L,spawn,noctalia msg session lock"                     # lock screen (new)
+      # --- DMS IPC ---
+      "SUPER,Space,spawn,dms ipc call spotlight toggle"           # app launcher
+      "SUPER,Escape,spawn,dms ipc call powermenu toggle"           # logout/reboot/shutdown menu
+      "SUPER,I,spawn,dms ipc call settings toggle"                 # settings
+      "SUPER,S,spawn,dms ipc call control-center toggle"           # control center
+      "SUPER,V,spawn,dms ipc call clipboard toggle"                # clipboard history
+      "SUPER,W,spawn,dms ipc call dash toggle wallpaper"           # wallpaper picker (dash's wallpaper tab)
+      "SUPER,N,spawn,dms ipc call notifications toggleDoNotDisturb" # DND toggle
+      "SUPER+SHIFT,N,spawn,dms ipc call night toggle"               # night mode
+      "SUPER+SHIFT,Escape,spawn,dms ipc call processlist open"      # process/performance list (see note below)
+      "SUPER,L,spawn,dms ipc call lock lock"                        # lock screen
     ] ++ tagBinds ++ numpadBinds;
   };
 }

@@ -17,6 +17,7 @@
     ./modules/zen-browser.nix
     ./modules/adb.nix
     ./modules/pc-stats.nix
+    ./modules/steam.nix
   ];
 
   services.gvfs.enable = true;

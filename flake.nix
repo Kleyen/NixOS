@@ -14,8 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     silentSDDM = {
@@ -33,7 +34,6 @@
     self,
     nixpkgs,
     home-manager,
-    noctalia,
     zen-browser,
     ...
   } @ inputs: {
@@ -52,7 +52,6 @@
             home-manager.users.denver = {
               imports = [
                 ./home.nix
-                noctalia.homeModules.default
               ];
             };
           }

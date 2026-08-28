@@ -35,7 +35,6 @@
     celluloid
     bitwarden-desktop
     vesktop
-    steam
 
     #
     python3
