@@ -16,8 +16,10 @@
     ./modules/sddm-theme.nix
     ./modules/zen-browser.nix
     ./modules/adb.nix
-    ./modules/pc-stats.nix
-    ./modules/steam.nix
+    ./modules/waydroid.nix
+    ./modules/cosmic.nix
+    ./modules/jellyfin.nix
+    ./modules/qemu.nix
   ];
 
   services.gvfs.enable = true;

@@ -35,6 +35,9 @@
     celluloid
     bitwarden-desktop
     vesktop
+    scrcpy
+
+
 
     #
     python3

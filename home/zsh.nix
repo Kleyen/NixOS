@@ -21,7 +21,10 @@
       rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
       update = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake /etc/nixos#nixos";
       gits = "git status";
-      rb = "rebuild";
+      nixopt = "sudo nix store optimise";
+      jfstart = "sudo systemctl start jellyfin";
+      jfstop = "sudo systemctl stop jellyfin";
+      gc = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +2 && sudo nix-collect-garbage && sudo /run/current-system/bin/switch-to-configuration boot";
 
       ls = "eza";
       ll = "eza -la";

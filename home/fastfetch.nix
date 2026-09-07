@@ -1,119 +1,166 @@
-{...}: {
+let
+  esc = builtins.fromJSON ''"\u001b"'';
+in
+{
   programs.fastfetch = {
     enable = true;
     settings = {
-      logo = {
-        source = "PacBSD";
-        padding = {
-          top = 1;
+      "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
+      "logo" = {
+        "type" = "auto";
+        "source" = "NetHydra";
+        "padding" = {
+          "top" = 5;
+          "left" = 3;
+          "right" = 5;
         };
       };
-      display = {
-        separator = " ";
+      "display" = {
+        "separator" = "  ";
+        "key" = {
+          "width" = 16;
+        };
+        "percent" = {
+          "type" = 9;
+        };
+        "size" = {
+          "binaryPrefix" = "iec";
+          "ndigits" = 1;
+        };
       };
-      modules = [
-        {type = "break";}
-        {type = "break";}
+      "modules" = [
         {
-          type = "title";
-          keyWidth = "8";
+          "type" = "custom";
+          "format" = "${esc}[38;5;2m┌─────────────────────────────── System ───────────────────────────────┐";
         }
-        {type = "break";logo = {
-                type = "kitty-direct";
-                source = "~/Pictures/logos/anime.png";
-                padding.top = 1;
-              };}
         {
-          type = "custom";
-          format = "{#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37} ";
+          "type" = "os";
+          "key" = "  ${esc}[38;5;40m  OS";
+          "format" = "{pretty-name} {arch}";
         }
-        {type = "break";}
         {
-          type = "os";
-          key = " os";
-          keyColor = "34";
+          "type" = "kernel";
+          "key" = "  ${esc}[38;5;40m  Kernel";
+          "format" = "{sysname} {release}";
         }
-        {type = "break";}
         {
-          type = "kernel";
-          key = " kernel";
-          keyColor = "34";
+          "type" = "de";
+          "key" = "  ${esc}[38;5;40m󰇄  Desktop";
+          "format" = "{pretty-name} {version}";
         }
-        {type = "break";}
         {
-          type = "packages";
-          key = "󰏗 packages";
-          keyColor = "34";
+          "type" = "wm";
+          "key" = "  ${esc}[38;5;40m󱂬  WM";
+          "format" = "{pretty-name} ({protocol-name})";
         }
-        {type = "break";}
         {
-          type = "shell";
-          key = " shell";
-          keyColor = "34";
+          "type" = "terminal";
+          "key" = "  ${esc}[38;5;40m  Terminal";
+          "format" = "{pretty-name} {version}";
         }
-        {type = "break";}
         {
-          type = "terminal";
-          key = " terminal";
-          keyColor = "34";
+          "type" = "shell";
+          "key" = "  ${esc}[38;5;40m  Shell";
+          "format" = "{pretty-name} {version}";
         }
-        {type = "break";}
         {
-          type = "wm";
-          key = "󱂬 wm";
-          keyColor = "34";
+          "type" = "packages";
+          "key" = "  ${esc}[38;5;40m󰏖  Packages";
+          "format" = "{nix-system} (nix-system), {nix-default} (nix-user), {flatpak-all} (flatpak)";
         }
-        {type = "break";}
         {
-          type = "display";
-          key = "󰨇 display";
-          keyColor = "34";
+          "type" = "locale";
+          "key" = "  ${esc}[38;5;40m󰗊  Locale";
+          "format" = "{result}";
         }
-        {type = "break";}
         {
-          type = "cpu";
-          format = "{1}";
-          key = "󰻠 cpu";
-          keyColor = "34";
+          "type" = "custom";
+          "format" = "${esc}[38;5;2m└───────────────────────────────────────────────────────────────────────┘";
         }
-        {type = "break";}
         {
-          type = "memory";
-          key = "  mem";
-          keyColor = "34";
+          "type" = "custom";
+          "format" = "${esc}[38;5;3m┌────────────────────────────── Hardware ──────────────────────────────┐";
         }
-        {type = "break";}
         {
-          type = "swap";
-          key = "󰾷 swap";
-          keyColor = "34";
+          "type" = "host";
+          "key" = "  ${esc}[38;5;178m󰇅  Host";
+          "format" = "{name}";
         }
-        {type = "break";}
         {
-          type = "disk";
-          key = " disk";
-          keyColor = "34";
+          "type" = "cpu";
+          "key" = "  ${esc}[38;5;178m  CPU";
+          "format" = "{name}";
         }
-        {type = "break";}
         {
-          type = "uptime";
-          key = "󱫡 uptime";
-          keyColor = "34";
+          "type" = "gpu";
+          "key" = "  ${esc}[38;5;178m󰢮  GPU";
+          "format" = "{name} ({type})";
         }
-        {type = "break";}
         {
-          type = "command";
-          key = "󱦟 os-age";
-          keyColor = "34";
-          text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+          "type" = "display";
+          "key" = "  ${esc}[38;5;178m󰍹  Display";
+          "format" = "{width}x{height} @ {refresh-rate}Hz";
         }
-        {type = "break";}
         {
-          type = "custom";
-          format = "{#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37} ";
+          "type" = "memory";
+          "key" = "  ${esc}[38;5;178m󰍛  Memory";
+          "format" = "{used} / {total} ({percentage})";
         }
-        {type = "break";}
-        {type = "break";}
+        {
+          "type" = "swap";
+          "key" = "  ${esc}[38;5;178m󰓡  Swap";
+          "format" = "{used} / {total} ({percentage}) - zram";
+        }
+        {
+          "type" = "disk";
+          "key" = "  ${esc}[38;5;178m󰋊  Disk";
+          "format" = "{size-used} / {size-total} ({size-percentage}) - {filesystem} [{mountpoint}]";
+          "folders" = "/:/mnt/Data";
+        }
+        {
+          "type" = "custom";
+          "format" = "${esc}[38;5;3m└───────────────────────────────────────────────────────────────────────┘";
+        }
+        {
+          "type" = "custom";
+          "format" = "${esc}[38;5;1m┌─────────────────────────────── Status ────────────────────────────────┐";
+        }
+        {
+          "type" = "localip";
+          "key" = "  ${esc}[38;5;167m󰩠  Local IP";
+          "format" = "{ipv4} ({ifname})";
+          "showIpv6" = false;
+          "showPrefixLen" = false;
+        }
+        {
+          "type" = "datetime";
+          "key" = "  ${esc}[38;5;167m󰔠  Date";
+          "format" = "{day-in-month}.{month-pretty}.{year}  {hour-pretty}:{minute-pretty}:{second-pretty}";
+        }
+        {
+          "type" = "processes";
+          "key" = "  ${esc}[38;5;167m  Processes";
+          "format" = "{result} running";
+        }
+        {
+          "type" = "command";
+          "key" = "  ${esc}[38;5;167m󱫘  Installed";
+          "text" = "LC_ALL=C date -d \"@$(stat -c %W /)\" \"+%d.%m.%Y %H:%M\" 2>/dev/null || echo N/A";
+        }
+        {
+          "type" = "command";
+          "key" = "  ${esc}[38;5;167m󱤦  OS Age";
+          "text" = "echo \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days since install\"";
+        }
+        {
+          "type" = "uptime";
+          "key" = "  ${esc}[38;5;167m󱫡  Uptime";
+          "format" = "{days}d {hours}h {minutes}m";
+        }
+        {
+          "type" = "custom";
+          "format" = "${esc}[38;5;1m└───────────────────────────────────────────────────────────────────────┘";
+        }
       ];
     };
   };

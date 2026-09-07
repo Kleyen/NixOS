@@ -4,6 +4,7 @@
     description = "Denver";
     extraGroups = ["networkmanager" "wheel" "audio" "video"];
     shell = pkgs.zsh;
+    homeMode = "711";
   };
 
   security.pam.services.sddm.enableGnomeKeyring = true;
