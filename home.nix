@@ -11,6 +11,7 @@
     ./home/theming.nix
     ./home/mango
     ./home/zed.nix
+    ./home/wezterm.nix
   ];
 
   home.username = "denver";

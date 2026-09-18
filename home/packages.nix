@@ -12,7 +12,6 @@
     celluloid
     parabolic
     telegram-desktop
-    cmatrix
     btop
     flatpak
     dnsutils
@@ -36,6 +35,10 @@
     bitwarden-desktop
     vesktop
     scrcpy
+    unimatrix
+    yt-dlp
+    ffmpeg
+    pear-desktop
 
 
 

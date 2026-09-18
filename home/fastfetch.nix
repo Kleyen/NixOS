@@ -66,7 +66,7 @@ in
         {
           "type" = "packages";
           "key" = "  ${esc}[38;5;40m󰏖  Packages";
-          "format" = "{nix-system} (nix-system), {nix-default} (nix-user), {flatpak-all} (flatpak)";
+          "format" = "{nix-system} (nix-system), {flatpak-all} (flatpak)";
         }
         {
           "type" = "locale";

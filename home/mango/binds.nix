@@ -18,7 +18,7 @@ in
 {
   wayland.windowManager.mango.settings = {
     bind = [
-      "SUPER,Return,spawn,ghostty"
+      "SUPER,Return,spawn,wezterm"
       "SUPER,Q,killclient"
       "SUPER,R,reload_config"
       "SUPER+SHIFT,E,quit"
