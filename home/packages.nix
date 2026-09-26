@@ -39,6 +39,7 @@
     yt-dlp
     ffmpeg
     pear-desktop
+    jetbrains.webstorm
 
 
 

@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.git = {
     enable = true;
     settings = {
@@ -6,17 +7,13 @@
         name = "Kleyen";
         email = "Kleyen@users.noreply.github.com";
       };
-      init.defaultBranch = "main";
-      safe.directory = "/etc/nixos";
     };
     includes = [
       {
-        condition = "gitdir:~/work/";
+        condition = "gitdir:~/Projects/Work/";
         contents = {
-          user = {
-            name = "GapayanD";
-            email = "GapayanD@users.noreply.github.com";
-          };
+          user.name = "GapayanD";
+          user.email = "GapayanD@users.noreply.github.com";
         };
       }
     ];

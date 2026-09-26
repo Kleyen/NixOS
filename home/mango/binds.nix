@@ -55,7 +55,7 @@ in
       "SUPER,I,spawn,noctalia msg settings-toggle"
       "SUPER,S,spawn,noctalia msg panel-toggle control-center"
       "SUPER,V,spawn,noctalia msg panel-toggle clipboard"
-      "SUPER,W,spawn,noctalia msg panel-toggle wallpaper"
+      "SUPER,W,spawn,noctalia msg panel-toggle ashur-d/wallpaper-widget:hub"
       "SUPER,N,spawn,noctalia msg notification-dnd-toggle"
       "SUPER+SHIFT,N,spawn,noctalia msg nightlight-toggle"
       "SUPER+SHIFT,Escape,spawn,noctalia msg window-switcher"

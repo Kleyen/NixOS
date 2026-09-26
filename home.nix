@@ -12,6 +12,8 @@
     ./home/mango
     ./home/zed.nix
     ./home/wezterm.nix
+    ./home/ssh.nix
+    ./home/git.nix
   ];
 
   home.username = "denver";
